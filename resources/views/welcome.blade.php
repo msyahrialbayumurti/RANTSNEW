@@ -267,40 +267,7 @@
                 </div>
 
                 <!-- Notifikasi dan Login/Logout (Kanan) -->
-                <div class="flex items-center space-x-4">
-                    @auth
-                    <!-- Notification Icon -->
-                    <button id="notification-button" class="relative notification-button">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600 hover:text-red-700"
-                            fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
-                        </svg>
-                        <span
-                            class="absolute top-0 right-0 bg-red-600 text-white rounded-full text-xs w-4 h-4 flex items-center justify-center">3</span>
-                    </button>
-
-                    <!-- Logout Button -->
-                    <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
-                        class="text-red-600 hover:underline">
-                        Logout
-                    </a>
-
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
-                        @csrf
-                    </form>
-
-
-                    <!-- <a href="{{ route('logout') }}"
-                        class="block px-4 py-2 text-white rounded-md hover:bg-red-600 transition duration-300"
-                        style="background: linear-gradient(180deg, hsla(57, 99%, 50%, 1) 0%, hsla(9, 100%, 51%, 1) 100%); max-width: 200px;">Logout</a> -->
-                    @else
-                    <!-- Login Button -->
-                    {{-- <a href="{{ route('login') }}"
-                        class="block px-4 py-2 text-white rounded-md hover:bg-blue-600 transition duration-300"
-                        style="background: linear-gradient(180deg, hsla(57, 99%, 50%, 1) 0%, hsla(9, 100%, 51%, 1) 100%); max-width: 200px;">Login</a> --}}
-                    @endauth
-                </div>
+                {{--  --}}
             </div>
 
 
