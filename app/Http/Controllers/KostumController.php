@@ -48,9 +48,9 @@ class KostumController extends Controller
             'nama_kostum' => 'required|string|max:255',
             'image' => 'required|image|max:2048',
             'jumlah' => 'required|integer|min:1',
-            'warna' => 'required|string|max:100',
-            'ukuran' => 'required|string|max:50',
-            'harga' => 'required|integer|min:0',
+            'warna' => 'required|string|max:50',
+            'ukuran' => 'required|string|max:5',
+            'harga' => 'required|integer|min:0|max:1500000',
         ]);
 
         $imagePath = $request->file('image')->store('kosta/images', 'public');
