@@ -17,6 +17,8 @@ use App\Http\Controllers\PesananPenyewaanJasaTariController;
 use App\Http\Controllers\PesananTariController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\Api\RiwayatController;
+use App\Models\Riwayat;
 
 // 1. Login & Register
 Route::post('/login', [AuthController::class, 'login']);
@@ -29,7 +31,7 @@ Route::post('/register', [RegisterController::class, 'register']);
 // Route::post('/register', [RegisterController::class, 'register']);
 Route::middleware('auth:sanctum')->post('/payment/createTransaction', [PaymentController::class, 'createTransaction']);
 Route::middleware('auth:sanctum')->post('/payment/makeup/succes', [PaymentController::class, 'verifyPaymentMakeup']);
-// 2. Jadwal Acara
+// 2. Jadwal Acaraz
 Route::get('/acara/{tanggal}', [CalendarController::class, 'schedule']);
 Route::get('/acara', [CalendarController::class, 'getAllCalenders']);
 
@@ -60,6 +62,7 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::put('/profile/update', [UserController::class, 'updateProfile']);
     Route::post('/logout', [AuthController::class, 'logout']);
 
+    Route::get('/pesanan-kostum/riwayat', [PesananKostumController::class, 'riwayatUser']);
 });
 
 // Route::middleware('auth:api')->get('profil/{id}', [UserController::class, 'showProfile']);
@@ -78,9 +81,10 @@ Route::prefix('tari')->group(function () {
 Route::post('pesanan-kostum', [PesananKostumController::class, 'createOrder']);
 Route::get('pesanan-kostum', [PesananKostumController::class, 'index']);
 Route::get('pesanan-kostum/{id}', [PesananKostumController::class, 'show']);
+// Route::get('pesanan-kostum/riwayat', [PesananKostumController::class, 'riwayatUser']);
+
 
 //PesananMakeUp
-
 Route::post('pesanan-makeup', [PesananMakeUpController::class, 'createOrder']);
 Route::get('pesanan-makeup', [PesananMakeupController::class, 'index']);
 Route::get('pesanan-makeup/{id}', [PesananKostumController::class, 'show']);
@@ -89,3 +93,9 @@ Route::get('pesanan-makeup/{id}', [PesananKostumController::class, 'show']);
 Route::post('pesanan-tari', [PesananPenyewaanJasaTariController::class, 'createOrder']);
 Route::get('pesanan-penyewaanjasatari', [PesananPenyewaanJasaTariController::class, 'index']);
 Route::get('pesanan-penyewaanjasatari/{id}', [PesananPenyewaanJasaTariController::class, 'show']);
+
+// Riwayat
+// Route::get('riwayat', [RiwayatController::class, 'index']);
+// Route::post('riwayat', [RiwayatController::class, 'store']);
+Route::get('riwayat', [Riwayat::class, 'index']);
+

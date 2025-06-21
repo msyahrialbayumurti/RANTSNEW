@@ -14,222 +14,222 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-    AOS.init();
+        AOS.init();
     </script>
 
 
     <style>
-    .fade-in {
-        animation: fadeIn 1.5s ease-in;
-    }
+        .fade-in {
+            animation: fadeIn 1.5s ease-in;
+        }
 
-    @keyframes fadeIn {
-        0% {
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .zoom-in {
+            animation: zoomIn 1.5s ease-in-out;
+        }
+
+        @keyframes zoomIn {
+            0% {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .slide-up {
+            animation: slideUp 1.5s ease-in-out;
+        }
+
+        @keyframes slideUp {
+            0% {
+                transform: translateY(100%);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 50;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            /* padding-top: 5rem; */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        main {
+            flex: 1;
+        }
+
+        footer {
+            margin-top: auto;
+        }
+
+        /* Modal overlay */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            z-index: 9999;
             opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
         }
 
-        100% {
+        /* Show modal */
+        .modal.active {
             opacity: 1;
-        }
-    }
-
-    .zoom-in {
-        animation: zoomIn 1.5s ease-in-out;
-    }
-
-    @keyframes zoomIn {
-        0% {
-            transform: scale(0.8);
-            opacity: 0;
+            visibility: visible;
         }
 
-        100% {
-            transform: scale(1);
-            opacity: 1;
-        }
-    }
-
-    .slide-up {
-        animation: slideUp 1.5s ease-in-out;
-    }
-
-    @keyframes slideUp {
-        0% {
-            transform: translateY(100%);
-            opacity: 0;
+        /* Modal content */
+        .modal-content {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            margin: 20px;
+            padding: 20px;
+            animation: slideIn 0.3s ease;
         }
 
-        100% {
-            transform: translateY(0);
-            opacity: 1;
-        }
-    }
-
-    header {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        z-index: 50;
-        background-color: white;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-
-    body {
-        /* padding-top: 5rem; */
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-    }
-
-    main {
-        flex: 1;
-    }
-
-    footer {
-        margin-top: auto;
-    }
-
-    /* Modal overlay */
-    .modal {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        z-index: 9999;
-        opacity: 0;
-        visibility: hidden;
-        transition: opacity 0.3s ease, visibility 0.3s ease;
-    }
-
-    /* Show modal */
-    .modal.active {
-        opacity: 1;
-        visibility: visible;
-    }
-
-    /* Modal content */
-    .modal-content {
-        background: #fff;
-        border-radius: 10px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        width: 400px;
-        margin: 20px;
-        padding: 20px;
-        animation: slideIn 0.3s ease;
-    }
-
-    /* Modal header */
-    .modal-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-bottom: 1px solid #e5e5e5;
-        padding-bottom: 10px;
-        margin-bottom: 15px;
-    }
-
-    .modal-header h2 {
-        font-size: 18px;
-        font-weight: bold;
-        color: #333;
-    }
-
-    /* Close button */
-    .modal-close {
-        background: none;
-        border: none;
-        font-size: 1.5rem;
-        cursor: pointer;
-        color: #333;
-    }
-
-    /* Modal body */
-    .modal-body ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-
-    .modal-body li {
-        display: flex;
-        align-items: center;
-        margin-bottom: 15px;
-    }
-
-    .modal-body li img {
-        width: 40px;
-        height: 40px;
-        margin-right: 15px;
-    }
-
-    .modal-body li p {
-        margin: 0;
-        font-size: 14px;
-        color: #555;
-    }
-
-    .modal-body li strong {
-        font-size: 14px;
-        color: #333;
-    }
-
-    .modal-footer {
-        text-align: center;
-        margin-top: 20px;
-    }
-
-    .modal-footer a {
-        font-size: 14px;
-        color: #007bff;
-        text-decoration: none;
-    }
-
-    .modal-footer a:hover {
-        text-decoration: underline;
-    }
-
-    /* Animation */
-    @keyframes slideIn {
-        from {
-            transform: translateY(-100%);
-            opacity: 0;
+        /* Modal header */
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #e5e5e5;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
         }
 
-        to {
-            transform: translateY(0);
-            opacity: 1;
+        .modal-header h2 {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
         }
-    }
 
-    .notification-button {
-        position: relative;
-    }
+        /* Close button */
+        .modal-close {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #333;
+        }
 
-    .notification-button .absolute {
-        position: absolute;
-        transform: translate(50%, -50%);
-        font-weight: bold;
-    }
+        /* Modal body */
+        .modal-body ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
 
-    .calendar-card {
-        background: #ffffff;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        border-radius: 12px;
-    }
+        .modal-body li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
 
-    .service-card:hover {
-        transform: scale(1.05);
-        transition: transform 0.3s ease-in-out;
-    }
+        .modal-body li img {
+            width: 40px;
+            height: 40px;
+            margin-right: 15px;
+        }
 
-    .zoom-in {
-        animation: zoomIn 1.5s ease-in-out;
-    }
+        .modal-body li p {
+            margin: 0;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .modal-body li strong {
+            font-size: 14px;
+            color: #333;
+        }
+
+        .modal-footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .modal-footer a {
+            font-size: 14px;
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .modal-footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Animation */
+        @keyframes slideIn {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .notification-button {
+            position: relative;
+        }
+
+        .notification-button .absolute {
+            position: absolute;
+            transform: translate(50%, -50%);
+            font-weight: bold;
+        }
+
+        .calendar-card {
+            background: #ffffff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+        }
+
+        .service-card:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .zoom-in {
+            animation: zoomIn 1.5s ease-in-out;
+        }
     </style>
 
 </head>
@@ -259,17 +259,13 @@
                         class="{{ Route::is('kontak') ? 'text-red-700 font-semibold' : 'text-gray-500' }} hover:text-red-700 transition duration-300">Kontak</a>
 
                     @auth
-                    <a href="{{ route('riwayat') }}"
-                        class="{{ Route::is('riwayat') ? 'text-red-700 font-semibold' : 'text-gray-500' }} hover:text-red-700 transition duration-300">Riwayat</a>
-                    <a href="{{ route('profil') }}"
-                        class="{{ Route::is('profil') ? 'text-red-700 font-semibold' : 'text-gray-500' }} hover:text-red-700 transition duration-300">Profil</a>
+                        <a href="{{ route('riwayat') }}"
+                            class="{{ Route::is('riwayat') ? 'text-red-700 font-semibold' : 'text-gray-500' }} hover:text-red-700 transition duration-300">Riwayat</a>
+                        <a href="{{ route('profil') }}"
+                            class="{{ Route::is('profil') ? 'text-red-700 font-semibold' : 'text-gray-500' }} hover:text-red-700 transition duration-300">Profil</a>
                     @endauth
                 </div>
-
-                <!-- Notifikasi dan Login/Logout (Kanan) -->
-                {{--  --}}
             </div>
-
 
             <!-- Hamburger Menu -->
             <div class="md:hidden">
@@ -299,20 +295,20 @@
                 class="{{ Route::is('kontak') ? 'text-red-700 py-2 px-3' : 'text-gray-500' }} hover:text-red-700 transition duration-300 block py-2 px-3">Kontak</a>
 
             @auth
-            {{-- <a href="{{ route('riwayat') }}"
+                {{-- <a href="{{ route('riwayat') }}"
                 class="{{ Route::is('riwayat') ? 'text-red-700 py-2 px-3' : 'text-gray-500' }} hover:text-red-700 transition duration-300 block py-2 px-3">Riwayat</a> --}}
-            {{-- <a href="{{ route('profil') }}"
+                {{-- <a href="{{ route('profil') }}"
                 class="{{ Route::is('profil') ? 'text-red-700 py-2 px-3' : 'text-gray-500' }} hover:text-red-700 transition duration-300 block py-2 px-3">Profil</a> --}}
             @endauth
 
             <!-- Login/Logout Button in Center -->
             <div class="mt-6 text-center">
                 @auth
-                {{-- <a href="{{ route('logout') }}"
+                    {{-- <a href="{{ route('logout') }}"
                     class="inline-block px-4 py-2 text-white text-sm rounded-md hover:bg-red-600 transition duration-300"
                     style="background: linear-gradient(180deg, hsla(57, 99%, 50%, 1) 0%, hsla(9, 100%, 51%, 1) 100%);">Logout</a> --}}
                 @else
-                {{-- <a href="{{ route('login') }}"
+                    {{-- <a href="{{ route('login') }}"
                     class="inline-block px-4 py-2 text-white text-sm rounded-md hover:bg-blue-600 transition duration-300"
                     style="background: linear-gradient(180deg, hsla(57, 99%, 50%, 1) 0%, hsla(9, 100%, 51%, 1) 100%);">Login</a> --}}
                 @endauth
@@ -347,56 +343,56 @@
 
 
     <script>
-    // JavaScript for toggling the mobile menu and animating the hamburger icon
-    const menuButton = document.getElementById('menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const iconContainer = document.getElementById('icon-container');
-    const lines = iconContainer.querySelectorAll('span');
+        // JavaScript for toggling the mobile menu and animating the hamburger icon
+        const menuButton = document.getElementById('menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const iconContainer = document.getElementById('icon-container');
+        const lines = iconContainer.querySelectorAll('span');
 
-    menuButton.addEventListener('click', () => {
-        // Animate mobile menu appearance/disappearance
-        if (mobileMenu.classList.contains('hidden')) {
-            mobileMenu.classList.remove('hidden');
-            setTimeout(() => {
-                mobileMenu.classList.add('scale-y-100', 'opacity-100');
-                mobileMenu.classList.remove('scale-y-0', 'opacity-0');
-            }, 10); // Small delay to allow transition
-        } else {
-            mobileMenu.classList.add('scale-y-0', 'opacity-0');
-            mobileMenu.classList.remove('scale-y-100', 'opacity-100');
-            setTimeout(() => {
-                mobileMenu.classList.add('hidden');
-            }, 300); // Match the duration of the transition
-        }
+        menuButton.addEventListener('click', () => {
+            // Animate mobile menu appearance/disappearance
+            if (mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.remove('hidden');
+                setTimeout(() => {
+                    mobileMenu.classList.add('scale-y-100', 'opacity-100');
+                    mobileMenu.classList.remove('scale-y-0', 'opacity-0');
+                }, 10); // Small delay to allow transition
+            } else {
+                mobileMenu.classList.add('scale-y-0', 'opacity-0');
+                mobileMenu.classList.remove('scale-y-100', 'opacity-100');
+                setTimeout(() => {
+                    mobileMenu.classList.add('hidden');
+                }, 300); // Match the duration of the transition
+            }
 
-        // Animate hamburger icon to X and back
-        lines[0].classList.toggle('rotate-45');
-        lines[0].classList.toggle('translate-y-2');
+            // Animate hamburger icon to X and back
+            lines[0].classList.toggle('rotate-45');
+            lines[0].classList.toggle('translate-y-2');
 
-        lines[1].classList.toggle('opacity-0');
+            lines[1].classList.toggle('opacity-0');
 
-        lines[2].classList.toggle('-rotate-45');
-        lines[2].classList.toggle('-translate-y-2');
-    });
+            lines[2].classList.toggle('-rotate-45');
+            lines[2].classList.toggle('-translate-y-2');
+        });
 
 
-    const modal = document.getElementById("notification-modal");
-    const modalButton = document.getElementById("notification-button");
-    const closeModal = document.getElementById("close-modal");
+        const modal = document.getElementById("notification-modal");
+        const modalButton = document.getElementById("notification-button");
+        const closeModal = document.getElementById("close-modal");
 
-    modalButton.addEventListener("click", () => {
-        modal.classList.toggle("active");
-    });
+        modalButton.addEventListener("click", () => {
+            modal.classList.toggle("active");
+        });
 
-    closeModal.addEventListener("click", () => {
-        modal.classList.remove("active");
-    });
-
-    window.addEventListener("click", (e) => {
-        if (!modal.contains(e.target) && !modalButton.contains(e.target)) {
+        closeModal.addEventListener("click", () => {
             modal.classList.remove("active");
-        }
-    });
+        });
+
+        window.addEventListener("click", (e) => {
+            if (!modal.contains(e.target) && !modalButton.contains(e.target)) {
+                modal.classList.remove("active");
+            }
+        });
     </script>
     <button id="backToTop"
         class="fixed bottom-6 right-6 bg-red-600 w-12 h-12 text-white rounded-full p-0  shadow-md shadow-red-700 hover:bg-red-700 focus:outline-none hidden transition duration-300"><i
@@ -405,25 +401,25 @@
 
     <!-- Inline Script -->
     <script>
-    // Select the Back to Top button
-    const backToTopButton = document.getElementById('backToTop');
+        // Select the Back to Top button
+        const backToTopButton = document.getElementById('backToTop');
 
-    // Show/hide button on scroll
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 300) {
-            backToTopButton.classList.remove('hidden');
-        } else {
-            backToTopButton.classList.add('hidden');
-        }
-    });
-
-    // Scroll to top functionality
-    backToTopButton.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth',
+        // Show/hide button on scroll
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.remove('hidden');
+            } else {
+                backToTopButton.classList.add('hidden');
+            }
         });
-    });
+
+        // Scroll to top functionality
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth',
+            });
+        });
     </script>
 
 
@@ -441,7 +437,8 @@
                     class="absolute top-0 left-0 w-full h-full object-cover">
 
                 <!-- Tombol Selengkapnya -->
-                <div class="absolute flex items-center z-10
+                <div
+                    class="absolute flex items-center z-10
                             top-[50%]
                             sm:top-[60%]
                             md:top-[65%]
@@ -452,7 +449,8 @@
                             translate-y-[calc(-60%+30px)]
                             sm:translate-y-[calc(-50%+35px)]
                             md:translate-y-[calc(-50%+43px)]">
-                    <a href="#services" class="bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-4 md:py-3 md:px-6 lg:py-4 lg:px-8 rounded-lg shadow-lg transition text-sm md:text-base lg:text-lg">Selengkapnya</a>
+                    <a href="#services"
+                        class="bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-4 md:py-3 md:px-6 lg:py-4 lg:px-8 rounded-lg shadow-lg transition text-sm md:text-base lg:text-lg">Selengkapnya</a>
                 </div>
             </div>
         </section>
@@ -465,13 +463,15 @@
             <!-- Heading Section -->
             <div class="text-center">
                 <span class="bg-pink-200 text-red-600 text-sm font-medium px-4 py-1 rounded-full">Our Advantages</span>
-                <h2 class="mt-4 text-3xl font-bold text-gray-900 sm:text-4xl">Kenapa pilih <br /> <span class="text-red-600"> RANTS</span></h2>
+                <h2 class="mt-4 text-3xl font-bold text-gray-900 sm:text-4xl">Kenapa pilih <br /> <span
+                        class="text-red-600"> RANTS</span></h2>
             </div>
     </div>
 
     <div class="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 max-w-7xl mx-auto px-6">
         <!-- Card 1 -->
-        <div class="relative bg-white rounded-lg shadow-lg p-6 text-center group overflow-hidden transition-all duration-300 hover:bg-red-800" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="500">
+        <div class="relative bg-white rounded-lg shadow-lg p-6 text-center group overflow-hidden transition-all duration-300 hover:bg-red-800"
+            data-aos="fade-up" data-aos-easing="linear" data-aos-duration="500">
             <div class="text-red-800 group-hover:text-white transition-colors duration-300 relative z-10">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24"
                     stroke="currentColor" stroke-width="2">
@@ -627,13 +627,15 @@
                         </div>
                     </div>
                     <div class="swiper-slide bg-white rounded-lg shadow-lg hover:shadow-xl overflow-hidden transition">
-                        <img src="{{ asset('assets/img/landingpage/5.jpg') }}" alt="Gallery Image 3" class="w-full h-48 object-cover">
+                        <img src="{{ asset('assets/img/landingpage/5.jpg') }}" alt="Gallery Image 3"
+                            class="w-full h-48 object-cover">
                         <div class="p-4">
                             <p class="text-gray-600 text-center">Latihan Rutin di Sanggar dengan Anggota Baru.</p>
                         </div>
                     </div>
                     <div class="swiper-slide bg-white rounded-lg shadow-lg hover:shadow-xl overflow-hidden transition">
-                        <img src="{{ asset('assets/img/landingpage/4.jpg') }}" alt="Gallery Image 2"class="w-full h-48 object-cover">
+                        <img src="{{ asset('assets/img/landingpage/4.jpg') }}"
+                            alt="Gallery Image 2"class="w-full h-48 object-cover">
                         <div class="p-4">
                             <p class="text-gray-600 text-center">Workshop Tata Rias dan Kostum untuk Generasi Muda.
                             </p>
@@ -706,7 +708,8 @@
 
         <!-- Contact Info -->
         <div class="mt-12 border-t border-gray-600 pt-8">
-            <div class="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-gray-300">
+            <div
+                class="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-gray-300">
                 <div class="flex items-center space-x-4">
                     <div class="bg-red-700 p-3 rounded-full">
                         <i class="fa-solid fa-envelope"></i>
@@ -738,69 +741,69 @@
         </div>
     </footer>
 
-        <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
     <script>
-    const swiper = new Swiper('.mySwiper', {
-        loop: true,
-        spaceBetween: 30,
+        const swiper = new Swiper('.mySwiper', {
+            loop: true,
+            spaceBetween: 30,
 
-        slidesPerView: 1,
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-        autoplay: {
-            delay: 3000,
-            disableOnInteraction: false,
-        },
-        breakpoints: {
-            640: {
-                slidesPerView: 2,
-                spaceBetween: 20,
+            slidesPerView: 1,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
             },
-            1024: {
-                slidesPerView: 3,
-                spaceBetween: 30,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
             },
-        },
-    });
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                },
+            },
+        });
     </script>
 
 
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
     <script>
-    const swiper = new Swiper('.mySwiper', {
-        loop: true,
-        spaceBetween: 30,
+        const swiper = new Swiper('.mySwiper', {
+            loop: true,
+            spaceBetween: 30,
 
-        slidesPerView: 1,
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-        autoplay: {
-            delay: 3000,
-            disableOnInteraction: false,
-        },
-        breakpoints: {
-            640: {
-                slidesPerView: 2,
-                spaceBetween: 20,
+            slidesPerView: 1,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
             },
-            1024: {
-                slidesPerView: 3,
-                spaceBetween: 30,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
             },
-        },
-    });
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                },
+            },
+        });
     </script>
 
 </body>

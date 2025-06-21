@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Http\Resources\PesananKostumResource; 
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
+use App\Http\Resources\PesananKostumResource;
 use App\Models\PesananKostum;
 use Illuminate\Http\Request;
 
@@ -21,8 +23,8 @@ class PesananKostumController extends Controller
             'status_pesanan' => 'required|string',
         ]);
 
-    
-        
+
+
         // Sesuaikan dengan nama field yang ada di model Anda
         $PesananKostum = PesananKostum::create([
             'kosta_id' => $validatedData['kosta_id'],  // Sesuaikan dengan 'kostums_id'
@@ -32,8 +34,8 @@ class PesananKostumController extends Controller
             'total_harga' => $validatedData['total_harga'],
             'status_pesanan' => $validatedData['status_pesanan'],
         ]);
-        
-        
+
+
 
         return response()->json([
             'message' => 'Pesanan berhasil dibuat',
@@ -59,4 +61,20 @@ class PesananKostumController extends Controller
         $pesananKostum = PesananKostum::findOrFail($id); // Cari berdasarkan ID
         return new PesananKostumResource($pesananKostum); // Gunakan resource yang sesuai
     }
+
+   public function riwayatUser()
+{
+    if (!Auth::check()) {
+        return response()->json(['message' => 'Unauthenticated.'], 401);
+    }
+
+    $user_id = Auth::user()->id;
+
+    $riwayat = PesananKostum::where('Users_id', $user_id)
+        ->orderBy('created_at', 'desc')
+        ->get();
+
+    return PesananKostumResource::collection($riwayat);
+}
+
 }

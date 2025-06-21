@@ -73,5 +73,8 @@ class User extends Authenticatable
     $events = Event::all(); // Atau query untuk mendapatkan data event
     return view('pages.user.layanan', compact('events'));
 }
-
+public function riwayat()
+    {
+        return $this->hasMany(Riwayat::class, 'users_id');
+    }
 }

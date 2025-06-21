@@ -25,19 +25,23 @@ class CalendarController extends Controller
         );
     }
 
-
-
     public function getEventDetails(Request $request)
     {
+        /*
+        Mengambil nilai tanggal dari input request, mencari data 
+        kalender pertama yang memiliki tanggal event sesuai dengan 
+        tanggal yang diberikan*/
         $date = $request->input('date');
         $calendars = Calendar::whereDate('event_date', $date)->first();
 
         if ($calendars) {
+            // Mengembalikan dalam format JSON
             return response()->json([
                 'calendars$calendars' => $calendars,
                 'message' => 'Ada acara pada tanggal ini.'
             ]);
         } else {
+            // Mengembalikan dalam format JSON
             return response()->json([
                 'message' => 'Tanggal ini kosong.'
             ]);

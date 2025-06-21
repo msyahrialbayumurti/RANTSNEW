@@ -16,7 +16,8 @@ class AuthController extends Controller
         return view('pages.login'); // Pastikan file ada di resources/views/auth/login.blade.php
     }
 
-    public function userLogout(){
+    public function userLogout()
+    {
         Auth::logout();
         return redirect('/login');
     }
@@ -61,15 +62,6 @@ class AuthController extends Controller
         // Cari user berdasarkan email
         $user = User::where('email', $request->email)->first();
 
-        // Periksa password
-        // if (!$user || !Hash::check($request->password, $user->password)) {
-        //     Log::info('User tidak ditemukan:', ['email' => $request->email]);
-        //     return response()->json([
-        //         'status' => 'error',
-        //         'message' => 'Email atau password salah',
-        //     ], 401);
-        // }
-
         if (!$user) {
             Log::warning('User tidak ditemukan:', ['email' => $request->email]);
         }
@@ -101,7 +93,7 @@ class AuthController extends Controller
     public function logout(Request $request)
     {
         $request->user()->tokens()->delete();
- 
+
         return response()->json([
             'status' => 'success',
             'message' => 'Logout berhasil',
