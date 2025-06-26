@@ -395,7 +395,7 @@
         });
     </script>
     <button id="backToTop"
-        class="fixed bottom-6 right-6 bg-red-600 w-12 h-12 text-white rounded-full p-0  shadow-md shadow-red-700 hover:bg-red-700 focus:outline-none hidden transition duration-300"><i
+        class="fixed bottom-6 right-6 bg-red-600 w-12 h-12 text-white rounded-full p-0  shadow-md shadow-red-700 hover:bg-red-700 focus:outline-none hidden transition duration-300 z-50"><i
             class="fa-solid fa-arrow-up"></i>
     </button>
 
@@ -422,12 +422,8 @@
         });
     </script>
 
-
-
     <!-- Content Section (just for demo) -->
     <div data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-duration="1000">
-
-
 
         <section class="relative w-full h-auto m-0 p-0">
             <!-- Container untuk Banner -->
@@ -458,151 +454,177 @@
 
     <!-- Section fitur-->
 
-    <div data-aos="fade-up" data-aos-duration="1000">
-        <section class="py-16 bg-gray-50">
-            <!-- Heading Section -->
-            <div class="text-center">
-                <span class="bg-pink-200 text-red-600 text-sm font-medium px-4 py-1 rounded-full">Our Advantages</span>
-                <h2 class="mt-4 text-3xl font-bold text-gray-900 sm:text-4xl">Kenapa pilih <br /> <span
-                        class="text-red-600"> RANTS</span></h2>
+    <section class="py-16 bg-gray-50">
+        <!-- Heading Section -->
+        <div data-aos="fade-up" data-aos-duration="1000">
+        <div class="text-center">
+            <span class="bg-pink-200 text-red-600 text-sm font-medium px-4 py-1 rounded-full">Our Advantages</span>
+            <h2 class="mt-4 text-3xl font-bold text-gray-900 sm:text-4xl">Kenapa pilih <br /> <span
+                class="text-red-600"> RANTS</span></h2>
             </div>
+        </div>
+
+  <div class="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 max-w-7xl mx-auto px-6">
+
+    <!-- Card 1: Layanan Terintegrasi -->
+    <div class="relative bg-white rounded-lg shadow-lg p-6 text-center group overflow-hidden transition-all duration-300 hover:bg-red-800"
+        data-aos="fade-up" data-aos-easing="linear" data-aos-duration="500">
+        <div class="text-red-800 group-hover:text-white transition-colors duration-300 relative z-10">
+            <!-- Ikon Puzzle -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M4 4h5v5H4V4zm5 5h6V4h5v5h-5v6h5v5h-5v-5H9v5H4v-5h5v-6z" />
+            </svg>
+        </div>
+        <h3 class="mt-4 text-xl font-bold text-gray-800 group-hover:text-white transition-colors duration-300 relative z-10">
+            Layanan Terintegrasi untuk Kebutuhan Seni Pertunjukan
+        </h3>
+        <p class="mt-2 text-sm text-gray-600 group-hover:text-gray-200 transition-colors duration-300 relative z-10">
+            RANTS menyediakan berbagai kebutuhan seni pertunjukan dalam satu platform, mulai dari sewa jasa tari profesional, kostum, hingga layanan make-up.
+        </p>
+        <span class="absolute bottom-0 left-0 w-full h-1 bg-red-800 group-hover:h-full transition-all duration-500 ease-out"></span>
     </div>
 
-    <div class="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 max-w-7xl mx-auto px-6">
-        <!-- Card 1 -->
-        <div class="relative bg-white rounded-lg shadow-lg p-6 text-center group overflow-hidden transition-all duration-300 hover:bg-red-800"
-            data-aos="fade-up" data-aos-easing="linear" data-aos-duration="500">
-            <div class="text-red-800 group-hover:text-white transition-colors duration-300 relative z-10">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24"
-                    stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                        d="M4 16s1.5 2 8 2 8-2 8-2m-8-2a4 4 0 100-8 4 4 0 000 8z" />
-                </svg>
-            </div>
-            <h3
-                class="mt-4 text-xl font-bold text-gray-800 group-hover:text-white transition-colors duration-300 relative z-10">
-                Layanan Terintegrasi untuk Kebutuhan Seni Pertunjukan
-            </h3>
-            <p
-                class="mt-2 text-sm text-gray-600 group-hover:text-gray-200 transition-colors duration-300 relative z-10">
-                RANTS menyediakan berbagai kebutuhan seni pertunjukan dalam satu platform, mulai dari sewa jasa tari
-                profesional, kostum, hingga layanan make-up. Pengguna tidak perlu repot mencari penyedia layanan secara
-                terpisah, karena semua tersedia dalam satu aplikasi.
-            </p>
-            <span
-                class="absolute bottom-0 left-0 w-full h-1 bg-red-800 group-hover:h-full group-hover:bottom-0 transition-all duration-500 ease-out"></span>
+    <!-- Card 2: Tim Profesional dan Berpengalaman -->
+    <div class="relative bg-white rounded-lg shadow-lg p-6 text-center group overflow-hidden transition-all duration-300 hover:bg-red-800"
+        data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1000">
+        <div class="text-red-800 group-hover:text-white transition-colors duration-300 relative z-10">
+            <!-- Ikon Tim/Orang Banyak -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M17 20h5v-2a4 4 0 00-4-4h-1m-4 6v-6a4 4 0 00-4-4H5a4 4 0 00-4 4v2h5m6-10a2 2 0 11-4 0 2 2 0 014 0zm6 4a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
         </div>
-
-        <!-- Card 2 -->
-        <div class="relative bg-white rounded-lg shadow-lg p-6 text-center group overflow-hidden transition-all duration-300 hover:bg-red-800"
-            data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1000">
-            <div class="text-red-800 group-hover:text-white transition-colors duration-300 relative z-10">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24"
-                    stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                        d="M17 9V7a4 4 0 10-8 0v2m-2 0a6 6 0 0112 0v2M5 21h14m-7-4v4m4-4H8" />
-                </svg>
-            </div>
-            <h3
-                class="mt-4 text-xl font-bold text-gray-800 group-hover:text-white transition-colors duration-300 relative z-10">
-                Tim Profesional dan Berpengalaman
-            </h3>
-            <p
-                class="mt-2 text-sm text-gray-600 group-hover:text-gray-200 transition-colors duration-300 relative z-10">
-                RANTS menjamin kualitas layanan dengan menghadirkan tim profesional dan berpengalaman di bidang seni
-                tari, tata rias, dan penyewaan kostum. Setiap layanan dipilih secara selektif untuk memastikan kepuasan
-                pelanggan.
-            </p>
-            <span
-                class="absolute bottom-0 left-0 w-full h-1 bg-red-800 group-hover:h-full group-hover:bottom-0 transition-all duration-500 ease-out"></span>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="relative bg-white rounded-lg shadow-lg p-6 text-center group overflow-hidden transition-all duration-300 hover:bg-red-800"
-            data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
-            <div class="text-red-800 group-hover:text-white transition-colors duration-300 relative z-10">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24"
-                    stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                        d="M17 9V7a4 4 0 10-8 0v2m-2 0a6 6 0 0112 0v2M5 21h14m-7-4v4m4-4H8" />
-                </svg>
-            </div>
-            <h3
-                class="mt-4 text-xl font-bold text-gray-800 group-hover:text-white transition-colors duration-300 relative z-10">
-                Katalog Lengkap dan Mudah Diakses
-            </h3>
-            <p
-                class="mt-2 text-sm text-gray-600 group-hover:text-gray-200 transition-colors duration-300 relative z-10">
-                Aplikasi/website RANTS memiliki katalog lengkap untuk layanan sewa kostum, jenis tarian, dan gaya
-                make-up. Pengguna dapat dengan mudah memilih sesuai dengan kebutuhan mereka melalui antarmuka yang
-                intuitif.
-            </p>
-            <span
-                class="absolute bottom-0 left-0 w-full h-1 bg-red-800 group-hover:h-full group-hover:bottom-0 transition-all duration-500 ease-out"></span>
-        </div>
-
-        <!-- Card 4 -->
-        <div class="relative bg-white rounded-lg shadow-lg p-6 text-center group overflow-hidden transition-all duration-300 hover:bg-red-800"
-            data-aos="fade-up" data-aos-easing="linear" data-aos-duration="2500">
-            <div class="text-red-800 group-hover:text-white transition-colors duration-300 relative z-10">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24"
-                    stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                        d="M4 16s1.5 2 8 2 8-2 8-2m-8-2a4 4 0 100-8 4 4 0 000 8z" />
-                </svg>
-            </div>
-            <h3
-                class="mt-4 text-xl font-bold text-gray-800 group-hover:text-white transition-colors duration-300 relative z-10">
-                Kemudahan Booking dan Penjadwalan Online
-            </h3>
-            <p
-                class="mt-2 text-sm text-gray-600 group-hover:text-gray-200 transition-colors duration-300 relative z-10">
-                Kami menawarkan fitur pemesanan online yang fleksibel, memungkinkan pengguna untuk memesan layanan kapan
-                saja dan di mana saja. Penjadwalan yang transparan dan real-time membantu pengguna mengatur kebutuhan
-                mereka tanpa kendala
-            </p>
-            <span
-                class="absolute bottom-0 left-0 w-full h-1 bg-red-800 group-hover:h-full group-hover:bottom-0 transition-all duration-500 ease-out"></span>
-        </div>
+        <h3 class="mt-4 text-xl font-bold text-gray-800 group-hover:text-white transition-colors duration-300 relative z-10">
+            Tim Profesional dan Berpengalaman
+        </h3>
+        <p class="mt-2 text-sm text-gray-600 group-hover:text-gray-200 transition-colors duration-300 relative z-10">
+            RANTS menjamin kualitas layanan dengan menghadirkan tim profesional dan berpengalaman di bidang seni tari, tata rias, dan penyewaan kostum.
+        </p>
+        <span class="absolute bottom-0 left-0 w-full h-1 bg-red-800 group-hover:h-full transition-all duration-500 ease-out"></span>
     </div>
+
+    <!-- Card 3: Katalog Lengkap -->
+    <div class="relative bg-white rounded-lg shadow-lg p-6 text-center group overflow-hidden transition-all duration-300 hover:bg-red-800"
+        data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
+        <div class="text-red-800 group-hover:text-white transition-colors duration-300 relative z-10">
+            <!-- Ikon Book/Open Catalog -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M12 20l9-5-9-5-9 5 9 5z" />
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M12 12V4l9 5-9 5z" />
+            </svg>
+        </div>
+        <h3 class="mt-4 text-xl font-bold text-gray-800 group-hover:text-white transition-colors duration-300 relative z-10">
+            Katalog Lengkap dan Mudah Diakses
+        </h3>
+        <p class="mt-2 text-sm text-gray-600 group-hover:text-gray-200 transition-colors duration-300 relative z-10">
+            Aplikasi/website RANTS memiliki katalog lengkap untuk layanan sewa kostum, jenis tarian, dan gaya make-up.
+        </p>
+        <span class="absolute bottom-0 left-0 w-full h-1 bg-red-800 group-hover:h-full transition-all duration-500 ease-out"></span>
+    </div>
+
+    <!-- Card 4: Booking Online -->
+    <div class="relative bg-white rounded-lg shadow-lg p-6 text-center group overflow-hidden transition-all duration-300 hover:bg-red-800"
+        data-aos="fade-up" data-aos-easing="linear" data-aos-duration="2500">
+        <div class="text-red-800 group-hover:text-white transition-colors duration-300 relative z-10">
+            <!-- Ikon Kalender -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M8 7V3m8 4V3m-9 8h10m-9 4h6M5 3h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2z" />
+            </svg>
+        </div>
+        <h3 class="mt-4 text-xl font-bold text-gray-800 group-hover:text-white transition-colors duration-300 relative z-10">
+            Kemudahan Booking dan Penjadwalan Online
+        </h3>
+        <p class="mt-2 text-sm text-gray-600 group-hover:text-gray-200 transition-colors duration-300 relative z-10">
+            Kami menawarkan fitur pemesanan online yang fleksibel, memungkinkan pengguna memesan layanan kapan saja dan di mana saja.
+        </p>
+        <span class="absolute bottom-0 left-0 w-full h-1 bg-red-800 group-hover:h-full transition-all duration-500 ease-out"></span>
+    </div>
+
+</div>
+
 
     </section>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layanan Kami - Ray Entertainment</title>
 
-    <div data-aos="fade-up" data-aos-duration="1000">
-        <section id="services" class="py-16 bg-gray-50 mt-10">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- ✅ Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- ✅ Font Awesome 6.4.0 (agar semua ikon tampil) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+          integrity="sha512-p6U0zN4UncA1vXJBoFC2orPEz2QzHb4nWGGcAy+uv2SwI8/WEiSptdDdJqLK+MaqZ6wCJrjCvUVhfl9Y3hFZbw=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- ✅ AOS Animation (opsional) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            AOS.init();
+        });
+    </script>
+</head>
+<body class="bg-gray-100">
+
+    <!-- ✅ Section: Layanan Kami -->
+    <section id="services" class="py-16 bg-gray-50 mt-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div data-aos="fade-up" data-aos-duration="1000">
                 <h2 class="text-3xl font-bold text-center text-gray-800 my-14">Layanan Kami</h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+                    <!-- Penyewaan Jasa Tari -->
                     <div class="bg-white rounded-lg shadow-lg hover:shadow-xl p-6 group transition" data-aos="fade-up"
                         data-aos-easing="linear" data-aos-duration="500">
                         <div class="flex justify-center mb-4">
-                            <i class="fas fa-drum text-red-500 text-4xl"></i>
+                            <i class="fa-solid fa-theater-masks text-red-500 text-4xl"></i>
                         </div>
                         <h3 class="text-xl font-semibold text-center group-hover:text-red-600">Penyewaan Jasa Tari</h3>
-                        <p class="text-gray-600 text-center mt-2">Penari profesional untuk berbagai acara, dari
-                            pernikahan hingga pertunjukan seni.</p>
+                        <p class="text-gray-600 text-center mt-2">
+                            Penari profesional untuk berbagai acara, dari pernikahan hingga pertunjukan seni.
+                        </p>
                     </div>
+
+                    <!-- Penyewaan Kostum -->
                     <div class="bg-white rounded-lg shadow-lg hover:shadow-xl p-6 group transition" data-aos="fade-up"
                         data-aos-easing="linear" data-aos-duration="700">
                         <div class="flex justify-center mb-4">
-                            <i class="fas fa-tshirt text-yellow-500 text-4xl"></i>
+                            <i class="fa-solid fa-shirt text-yellow-500 text-4xl"></i>
                         </div>
                         <h3 class="text-xl font-semibold text-center group-hover:text-red-600">Penyewaan Kostum</h3>
-                        <p class="text-gray-600 text-center mt-2">Kostum tradisional dan modern untuk semua kebutuhan
-                            acara Anda.</p>
+                        <p class="text-gray-600 text-center mt-2">
+                            Kostum tradisional dan modern untuk semua kebutuhan acara Anda.
+                        </p>
                     </div>
+
+                    <!-- Make Up -->
                     <div class="bg-white rounded-lg shadow-lg hover:shadow-xl p-6 group transition" data-aos="fade-up"
                         data-aos-easing="linear" data-aos-duration="900">
                         <div class="flex justify-center mb-4">
-                            <i class="fas fa-paint-brush text-pink-500 text-4xl"></i>
+                            <i class="fa-solid fa-hand-sparkles text-pink-500 text-4xl"></i>
                         </div>
                         <h3 class="text-xl font-semibold text-center group-hover:text-red-600">Make Up</h3>
-                        <p class="text-gray-600 text-center mt-2">Tata rias profesional untuk meningkatkan penampilan
-                            Anda.</p>
+                        <p class="text-gray-600 text-center mt-2">
+                            Tata rias profesional untuk meningkatkan penampilan Anda.
+                        </p>
                     </div>
+
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
+
     </div>
 
     <section class="py-16 bg-gray-100">

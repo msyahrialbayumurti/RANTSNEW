@@ -62,19 +62,18 @@ class PesananKostumController extends Controller
         return new PesananKostumResource($pesananKostum); // Gunakan resource yang sesuai
     }
 
-   public function riwayatUser()
-{
-    if (!Auth::check()) {
-        return response()->json(['message' => 'Unauthenticated.'], 401);
+    public function riwayatUser()
+    {
+        if (!Auth::check()) {
+            return response()->json(['message' => 'Unauthenticated.'], 401);
+        }
+
+        $user_id = Auth::user()->id;
+
+        $riwayat = PesananKostum::where('Users_id', $user_id)
+            ->orderBy('created_at', 'desc')
+            ->get();
+
+        return PesananKostumResource::collection($riwayat);
     }
-
-    $user_id = Auth::user()->id;
-
-    $riwayat = PesananKostum::where('Users_id', $user_id)
-        ->orderBy('created_at', 'desc')
-        ->get();
-
-    return PesananKostumResource::collection($riwayat);
-}
-
 }
